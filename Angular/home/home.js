@@ -1,7 +1,7 @@
 angular.module( 'sample.home', [
 'auth0'
 ])
-.controller( 'HomeCtrl', function HomeController( $scope, auth, $http, $location, store) 
+.controller( 'HomeCtrl', ['$scope', '$firebaseArray', function HomeController( $scope, $firebaseArray, $http, $location, store, auth) 
 {
 
 
@@ -33,9 +33,9 @@ angular.module( 'sample.home', [
     $location.path('/login');
   }
 
-  //var IrlWorkBenches = new Firebase('https://bookaroomfirebase.firebaseio.com/WorkBenches');
-  //var fireBaseKey = IrlWorkBenches.key();
-  //$scope.WorkBenches = $firebaseArray(IrlWorkBenches);
+  var IrlWorkBenches = new Firebase('https://bookaroomfirebase.firebaseio.com/WorkBenches');
+  var fireBaseKey = IrlWorkBenches.key();
+  $scope.WorkBenches = $firebaseArray(IrlWorkBenches);
 
 
   $scope.showWorkbench = function(item) 
@@ -51,4 +51,4 @@ angular.module( 'sample.home', [
             console.log("item " + JSON.stringify(item));
   }
 
-});
+}]);

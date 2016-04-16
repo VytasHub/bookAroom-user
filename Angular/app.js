@@ -5,6 +5,8 @@ angular.module( 'sample', [
   'sample.login',
   'angular-storage',
   'angular-jwt',
+  'firebase'
+
   
 ])
 .config( function myAppConfig ( $routeProvider, authProvider, $httpProvider, $locationProvider,
