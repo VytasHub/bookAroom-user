@@ -1,11 +1,14 @@
 angular.module( 'sample.home', [
 'auth0'
 ])
-.controller( 'HomeCtrl', function HomeController( $scope, auth, $http, $location, store ) {
+.controller( 'HomeCtrl', function HomeController( $scope, auth, $http, $location, store) 
+{
+
 
   $scope.auth = auth;
 
-  $scope.callApi = function() {
+  $scope.callApi = function() 
+  {
     // Just call the API as you'd do using $http
     $http({
       url: 'http://localhost:3001/secured/ping',
@@ -22,11 +25,30 @@ angular.module( 'sample.home', [
     });
   }
 
-  $scope.logout = function() {
+  $scope.logout = function() 
+  {
     auth.signout();
     store.remove('profile');
     store.remove('token');
     $location.path('/login');
+  }
+
+  //var IrlWorkBenches = new Firebase('https://bookaroomfirebase.firebaseio.com/WorkBenches');
+  //var fireBaseKey = IrlWorkBenches.key();
+  //$scope.WorkBenches = $firebaseArray(IrlWorkBenches);
+
+
+  $scope.showWorkbench = function(item) 
+  {
+            console.log("show button is called ");
+            $scope.addFormShow = false; //turn on the addForm visibility
+            $scope.editFormShow = true; //turn off the editForm visibility
+
+            $scope.Address = item.Address;
+            $scope.CityTown = item.CityTown;
+            $scope.WName = item.WName;
+            $scope.id = item.$id;
+            console.log("item " + JSON.stringify(item));
   }
 
 });
