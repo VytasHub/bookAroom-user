@@ -45,21 +45,21 @@
     <thead>
         <tr>
             <td>
-                <a href="#/view" ng-click="sortType = 'city_town_name'; sortReverse = !sortReverse">
+                <a href="#/" ng-click="sortType = 'city_town_name'; sortReverse = !sortReverse">
                   Workbench City/Town
                   <span ng-show="sortType == 'city_town_name' && !sortReverse" class="fa fa-caret-down"></span>
                   <span ng-show="sortType == 'city_town_name' && sortReverse" class="fa fa-caret-up"></span>
               </a>
             </td>
             <td>
-                <a href="#/view" ng-click="sortType = 'address'; sortReverse = !sortReverse">
+                <a href="#/" ng-click="sortType = 'address'; sortReverse = !sortReverse">
               Workbench Address
               <span ng-show="sortType == 'address' && !sortReverse" class="fa fa-caret-down"></span>
               <span ng-show="sortType == 'address' && sortReverse" class="fa fa-caret-up"></span>
           </a>
             </td>
             <td>
-                <a href="#/view" ng-click="sortType = 'roomName'; sortReverse = !sortReverse">
+                <a href="#/" ng-click="sortType = 'roomName'; sortReverse = !sortReverse">
            Workbench room name
            <span ng-show="sortType == 'roomName' && !sortReverse" class="fa fa-caret-down"></span>
            <span ng-show="sortType == 'roomName' && sortReverse" class="fa fa-caret-up"></span>
@@ -73,8 +73,7 @@
             <td>{{ item.CityTown }}</td>
             <td>{{ item.WName }}</td>
             <td>
-                <button class="btn btn-primary" ng-click="showWorkbench(item)">Edit</button>&nbsp;
-                <button class="btn btn-danger" ng-click="deleteWorkbench(item)">Remove</Button>
+                <button class="btn btn-danger" ng-click="deleteWorkbench(item)">Book</Button>
             </td>
         </tr>
     </tbody>

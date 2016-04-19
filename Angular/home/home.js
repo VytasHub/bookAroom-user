@@ -1,9 +1,15 @@
 angular.module( 'sample.home', [
 'auth0'
 ])
-.controller( 'HomeCtrl', ['$scope', '$firebaseArray', function HomeController( $scope, $firebaseArray, $http, $location, store, auth) 
+.controller( 'HomeCtrl',['$scope', 'auth','$http','$location','store','$firebaseArray',  function HomeController( $scope, auth, $http, $location, store, $firebaseArray) 
 {
+  //Order of the Parameter mathers so just included all of the parameters of the function
 
+
+  //Uncoment folowing refs for FireBAse to work
+  var IrlWorkBenches = new Firebase('https://bookaroomfirebase.firebaseio.com/WorkBenches');
+  var fireBaseKey = IrlWorkBenches.key();
+  $scope.WorkBenches = $firebaseArray(IrlWorkBenches);
 
   $scope.auth = auth;
 
@@ -33,9 +39,7 @@ angular.module( 'sample.home', [
     $location.path('/login');
   }
 
-  var IrlWorkBenches = new Firebase('https://bookaroomfirebase.firebaseio.com/WorkBenches');
-  var fireBaseKey = IrlWorkBenches.key();
-  $scope.WorkBenches = $firebaseArray(IrlWorkBenches);
+  
 
 
   $scope.showWorkbench = function(item) 
@@ -51,4 +55,6 @@ angular.module( 'sample.home', [
             console.log("item " + JSON.stringify(item));
   }
 
+
+//Add Square bracket
 }]);
