@@ -1,7 +1,7 @@
 angular.module( 'sample.home', [
 'auth0'
 ])
-.controller( 'HomeCtrl',['$scope', 'auth','$http','$location','store','$firebaseArray',  function HomeController( $scope, auth, $http, $location, store, $firebaseArray) 
+.controller( 'HomeCtrl',['$scope', 'auth','$http','$location','store','$firebaseArray', function HomeController( $scope, auth, $http, $location, store, $firebaseArray) 
 {
   //Order of the Parameter mathers so just included all of the parameters of the function
 
@@ -54,6 +54,46 @@ angular.module( 'sample.home', [
             $scope.id = item.$id;
             console.log("item " + JSON.stringify(item));
   }
+
+
+
+    $scope.today = function() {
+    $scope.dt = new Date();
+  };
+  $scope.today();
+  $scope.repeatArray = [1,2,3];
+  $scope.showWeeks = true;
+  $scope.toggleWeeks = function () {
+    $scope.showWeeks = ! $scope.showWeeks;
+  };
+
+  $scope.clear = function () {
+    $scope.dt = null;
+  };
+
+  // Disable weekend selection
+  $scope.disabled = function(date, mode) {
+    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  };
+
+  $scope.toggleMin = function() {
+    $scope.minDate = ( $scope.minDate ) ? null : new Date();
+  };
+  $scope.toggleMin();
+
+  $scope.opened = [];
+  $scope.open = function(index) {
+    $timeout(function() {
+      $scope.opened[index] = true;
+    });
+  };
+
+  $scope.dateOptions = {
+    'year-format': "'yy'",
+    'starting-day': 1
+  };
+
+
 
 
 //Add Square bracket

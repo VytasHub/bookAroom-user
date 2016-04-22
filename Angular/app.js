@@ -5,7 +5,9 @@ angular.module( 'sample', [
   'sample.login',
   'angular-storage',
   'angular-jwt',
-  'firebase'
+  'firebase',
+  'ui.bootstrap'
+
 
   
 ])
