@@ -59,12 +59,12 @@
                 <td>{{ item.CityTown }}</td>
                 <td>{{ item.WName }}</td>
                 <td>
-                    <button class="btn btn-danger" ng-click="deleteWorkbench(item)">Book</Button>
+                    <button class="btn btn-danger" ng-click="BookWorkbench(item)">Book</Button>
                 </td>
                 <td>
                     <input type="text" datepicker-popup="MM/dd/yyyy" ng-model="dt" is-open="opened[$index]" min="minDate" max="'2025-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" />
-                    <button class="btn" ng-click="open($index)"><i class="icon-calendar"></i>
-                    </button>
+                   <!-- <button class="btn" ng-click="open($index)"><i class="icon-calendar"></i>
+                    </button> -->
                 </td>
                 <!-- Date
                    <td class="input-group">

@@ -55,10 +55,32 @@ angular.module( 'sample.home', [
             console.log("item " + JSON.stringify(item));
   }
 
+  $scope.BookWorkbench = function() 
+        {
+
+                //if(isValid){
+                $scope.WorkBenches.$add({
+
+                    TimeBooked: $scope.TimeBooked,
+                    
+                });
+                //clearForm();
+                //}
+
+            }
 
 
-    $scope.today = function() {
-    $scope.dt = new Date();
+    $scope.today = function() 
+    {
+      
+      var dateObj = new Date();
+      var month = dateObj.getUTCMonth() + 1; //months from 1-12
+      var day = dateObj.getUTCDate();
+      var year = dateObj.getUTCFullYear();
+
+      newdate = month + "/" + day + "/" + year;
+
+      $scope.dt = newdate;
   };
   $scope.today();
   $scope.repeatArray = [1,2,3];
@@ -67,24 +89,33 @@ angular.module( 'sample.home', [
     $scope.showWeeks = ! $scope.showWeeks;
   };
 
-  $scope.clear = function () {
+
+
+
+  $scope.clear = function () 
+  {
     $scope.dt = null;
   };
 
   // Disable weekend selection
-  $scope.disabled = function(date, mode) {
+  $scope.disabled = function(date, mode) 
+  {
     return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
   };
 
-  $scope.toggleMin = function() {
+  $scope.toggleMin = function() 
+  {
     $scope.minDate = ( $scope.minDate ) ? null : new Date();
   };
   $scope.toggleMin();
 
   $scope.opened = [];
-  $scope.open = function(index) {
+  $scope.open = function(index) 
+  {
+
     $timeout(function() {
       $scope.opened[index] = true;
+      console.log("Click");
     });
   };
 
