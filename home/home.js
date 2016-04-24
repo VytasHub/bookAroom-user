@@ -114,6 +114,152 @@ angular.module('sample.home', [
         };
 
 
+        ////////////////////////////Google Maps
+
+
+        // function init_map() 
+        // {
+        //     var myOptions = 
+        //     {
+        //         zoom: 10,
+        //         center: new google.maps.LatLng(51.5073509, -0.12775829999998223),
+        //         mapTypeId: google.maps.MapTypeId.ROADMAP
+        //     };
+
+        //     map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+
+
+
+        //     marker1 = new google.maps.Marker(
+        //     {
+        //         map: map,
+        //         position: new google.maps.LatLng(51.5073509, -0.12775829999998223)
+        //     });
+
+        //     infowindow1 = new google.maps.InfoWindow(
+        //     {
+        //         content: '<strong>Title</strong><br>London, United Kingdom<br>'
+        //     });
+
+
+        //     marker = new google.maps.Marker(
+        //     {
+        //         map: map,
+        //         position: new google.maps.LatLng(51.6073509, -0.12775829999998223)
+        //     });
+
+        //     infowindow = new google.maps.InfoWindow(
+        //     {
+        //         content: '<br>Test, Ireland<br>'
+        //     });
+
+
+
+
+        //     google.maps.event.addListener(marker, 'click', function() 
+        //     {
+        //         infowindow.open(map, marker);
+        //         infowindow1.open(map,  marker1);
+        //     });
+
+        //     infowindow.open(map, marker);
+        //     infowindow1.open(map,  marker1);
+        // }
+        // google.maps.event.addDomListener(window, 'load', init_map);
+
+        function init_map() 
+        {
+            var myOptions = 
+            {
+                zoom: 8,
+                center: new google.maps.LatLng(53.42701599999999, -7.942911900000013),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+
+            marker = new google.maps.Marker(
+            {
+                map: map,
+                position: new google.maps.LatLng(53.423383, -7.938385)
+            });
+            infowindow = new google.maps.InfoWindow(
+            {
+                content: '<strong></strong><br>Athlone<br>2 Workbenches<br>'
+            });
+
+            //Adding multyplay markers on to map create duplicate objects of marker and infowindow
+            marker1 = new google.maps.Marker(
+            {
+                map: map,
+                position: new google.maps.LatLng(53.344631, -6.259526)
+            });
+            infowindow1 = new google.maps.InfoWindow(
+            {
+                content: '<strong></strong><br>Dublin<br>3 Workbenches<br>'
+            });
+
+
+             marker2 = new google.maps.Marker(
+            {
+                map: map,
+                position: new google.maps.LatLng(53.275107, -9.050199)
+            });
+            infowindow2 = new google.maps.InfoWindow(
+            {
+                content: '<strong></strong><br>Galway<br>3 Workbenches<br>'
+            });
+
+
+
+
+
+
+
+            google.maps.event.addListener(marker, 'click', function() 
+            {
+                infowindow.open(map, marker);
+
+            });
+            //Once Objects created add ref infowindow1 marker1
+            infowindow.open(map, marker);
+            infowindow1.open(map, marker1);
+            infowindow2.open(map, marker2);
+        }
+        google.maps.event.addDomListener(window, 'load', init_map);
+
+
+        ////////////////////////////Google Maps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         //Add Square bracket
