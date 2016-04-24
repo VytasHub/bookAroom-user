@@ -10,3 +10,8 @@ This project used git.ignore to ignore node modules.IN order to run project loca
   npm install dotenv
 ```
 
+And than run the node `server.js` command in top directory of the project.
+
+Note: project is currently live so you wount be able to log in  if runing locally because callback url would need to be changed on Auth0 to `http://localhost:3000/`
+
+
