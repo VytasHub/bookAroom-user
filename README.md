@@ -17,5 +17,5 @@ Note: project is currently live so you wont be able to log in  if runing locally
 
 The website can be found at folowing address:
 
-https://bookaroomuser.herokuapp.com/#/login
+https://bookaroomnow.herokuapp.com/#/login
 
